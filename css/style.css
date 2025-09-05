@@ -1,0 +1,81 @@
+    :root {
+        --bs-primary: #6c5ce7;
+        --bs-secondary: #a29bfe;
+        --bs-success: #00b894;
+        --bs-warning: #fdcb6e;
+        --bs-danger: #e84393;
+        --bs-info: #74b9ff;
+        --bs-dark: #2d3436;
+        --bs-light: #f8f9fa;
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary));
+        color: white;
+        padding: 80px 0;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .game-card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .game-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .btn-custom {
+        background: linear-gradient(45deg, var(--bs-primary), var(--bs-secondary));
+        border: none;
+        border-radius: 25px;
+        padding: 10px 25px;
+        font-weight: 600;
+    }
+
+    .btn-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+    }
+
+    .stats-section {
+        background: var(--bs-light);
+        padding: 60px 0;
+    }
+
+    .testimonial-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .footer {
+        background: var(--bs-dark);
+        color: white;
+        padding: 40px 0;
+    }
+
+    .price-badge {
+        background: linear-gradient(45deg, var(--bs-success), #55a3ff);
+        color: white;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-weight: 600;
+    }
+
+    .loading-spinner {
+        border: 3px solid rgba(108, 92, 231, 0.3);
+        border-top: 3px solid var(--bs-primary);
+    }

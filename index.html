@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameCard Pro - Premium Gaming Gift Cards</title>
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--bs-primary);">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-controller me-2"></i>GameCard Pro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Gift Cards
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#steam">Steam</a></li>
+                            <li><a class="dropdown-item" href="#valorant">Valorant</a></li>
+                            <li><a class="dropdown-item" href="#fortnite">Fortnite</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#all">All Games</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                        <i class="bi bi-cart3"></i> Cart <span class="badge bg-danger">2</span>
+                    </button>
+                    <button class="btn btn-light" type="button">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="container mt-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" style="color: var(--bs-primary);">Home</a></li>
+                <li class="breadcrumb-item active">Gaming Gift Cards</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">
+                        Premium Gaming Gift Cards
+                        <span class="badge bg-warning text-dark ms-2">Hot!</span>
+                    </h1>
+                    <p class="lead mb-4">Get instant digital delivery of Steam, Valorant, PUBG, Fortnite, FIFA and more
+                        gaming gift cards. Level up your gaming experience today!</p>
+                    <button class="btn btn-custom btn-lg me-3">
+                        <i class="bi bi-shop me-2"></i>Shop Now
+                    </button>
+                    <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#promoModal">
+                        <i class="bi bi-gift me-2"></i>View Offers
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <div class="spinner-border loading-spinner mb-3" role="status"
+                            style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p>Loading featured games...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert Section -->
+    <div class="container mt-4">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle me-2"></i>
+            <strong>Limited Time Offer!</strong> Get 10% extra credit on all Steam gift cards this week!
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        <div class="alert alert-info" role="alert">
+            <i class="bi bi-info-circle me-2"></i>
+            All gift cards are delivered instantly via email after payment confirmation.
+        </div>
+    </div>
+
+    <!-- Featured Products -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col">
+                    <h2 class="text-center mb-4">Featured Gaming Gift Cards</h2>
+                    <!-- Button Group for Categories -->
+                    <div class="btn-group d-flex mb-4" role="group">
+                        <input type="radio" class="btn-check" name="category" id="all" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="all">All Games</label>
+
+                        <input type="radio" class="btn-check" name="category" id="popular" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="popular">Popular</label>
+
+                        <input type="radio" class="btn-check" name="category" id="new" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="new">New</label>
+
+                        <input type="radio" class="btn-check" name="category" id="sale" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="sale">On Sale</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Cards -->
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card game-card h-100">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #1e3c72, #2a5298); display: flex; align-items: center; justify-content: center;">
+                            <h3 class="text-white fw-bold">STEAM</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Steam Gift Cards</h5>
+                            <p class="card-text">Access thousands of games on Steam with instant delivery.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">$5 - $100</span>
+                                <div class="btn-group btn-group-sm">
+                                    <button class="btn btn-primary">$10</button>
+                                    <button class="btn btn-outline-primary">$25</button>
+                                    <button class="btn btn-outline-primary">$50</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">
+                                <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card game-card h-100">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #ff416c, #ff4b2b); display: flex; align-items: center; justify-content: center;">
+                            <h3 class="text-white fw-bold">VALORANT</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Valorant Points</h5>
+                            <p class="card-text">Get VP for skins, battle passes and premium content.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">$5 - $100</span>
+                                <span class="badge bg-danger">Best Seller</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">
+                                <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card game-card h-100">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #4facfe, #00f2fe); display: flex; align-items: center; justify-content: center;">
+                            <h3 class="text-white fw-bold">FORTNITE</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fortnite V-Bucks</h5>
+                            <p class="card-text">Purchase V-Bucks for Battle Royale and Save the World.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">$8 - $80</span>
+                                <span class="badge bg-success">10% OFF</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">
+                                <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card game-card h-100">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center;">
+                            <h3 class="text-white fw-bold">PUBG</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">PUBG Mobile UC</h5>
+                            <p class="card-text">Get Unknown Cash for PUBG Mobile premium items.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">$5 - $100</span>
+                                <span class="badge bg-warning text-dark">New</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">
+                                <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card game-card h-100">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #f093fb, #f5576c); display: flex; align-items: center; justify-content: center;">
+                            <h3 class="text-white fw-bold">FIFA</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">FIFA Points</h5>
+                            <p class="card-text">Build your Ultimate Team with FIFA Points.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">$10 - $100</span>
+                                <div class="progress" style="width: 60px; height: 6px;">
+                                    <div class="progress-bar" style="width: 75%; background-color: var(--bs-success);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-primary w-100">
+                                <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card game-card h-100">
+                        <div
+                            style="height: 200px; background: linear-gradient(135deg, #a8edea, #fed6e3); display: flex; align-items: center; justify-content: center;">
+                            <h3 class="text-dark fw-bold">MORE GAMES</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Other Gaming Cards</h5>
+                            <p class="card-text">Xbox Live, PlayStation, Nintendo eShop, and more!</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price-badge">$5 - $100</span>
+                                <button class="btn btn-sm btn-outline-primary">View All</button>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100">
+                                <i class="bi bi-arrow-right me-2"></i>Explore
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose GameCard Pro?</h2>
+            <ul class="nav nav-pills nav-justified mb-4" id="features-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="instant-tab" data-bs-toggle="pill" data-bs-target="#instant"
+                        type="button">
+                        <i class="bi bi-lightning-charge me-2"></i>Instant Delivery
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="secure-tab" data-bs-toggle="pill" data-bs-target="#secure"
+                        type="button">
+                        <i class="bi bi-shield-check me-2"></i>Secure Payment
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="support-tab" data-bs-toggle="pill" data-bs-target="#support"
+                        type="button">
+                        <i class="bi bi-headset me-2"></i>24/7 Support
+                    </button>
+                </li>
+            </ul>
+            <div class="tab-content" id="features-tabContent">
+                <div class="tab-pane fade show active" id="instant" role="tabpanel">
+                    <div class="text-center">
+                        <h4>Lightning Fast Delivery</h4>
+                        <p class="lead">Get your gift card codes instantly via email within seconds of payment
+                            confirmation.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <div class="spinner-border text-primary mb-3" role="status">
+                                        <span class="visually-hidden">Processing...</span>
+                                    </div>
+                                    <h6>Processing</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <i class="bi bi-check-circle-fill text-success mb-3" style="font-size: 2rem;"></i>
+                                    <h6>Verified</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-center">
+                                    <i class="bi bi-envelope-fill text-info mb-3" style="font-size: 2rem;"></i>
+                                    <h6>Delivered</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="secure" role="tabpanel">
+                    <div class="text-center">
+                        <h4>100% Secure Transactions</h4>
+                        <p class="lead">Your payments are protected with bank-level security and SSL encryption.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-3">
+                                <i class="bi bi-credit-card text-primary mb-2" style="font-size: 2rem;"></i>
+                                <p>Credit Cards</p>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="bi bi-paypal text-info mb-2" style="font-size: 2rem;"></i>
+                                <p>PayPal</p>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="bi bi-currency-bitcoin text-warning mb-2" style="font-size: 2rem;"></i>
+                                <p>Cryptocurrency</p>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="bi bi-bank text-success mb-2" style="font-size: 2rem;"></i>
+                                <p>Bank Transfer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="support" role="tabpanel">
+                    <div class="text-center">
+                        <h4>Round-the-Clock Support</h4>
+                        <p class="lead">Our expert team is available 24/7 to help with any questions or issues.</p>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <i class="bi bi-chat-dots text-primary mb-2" style="font-size: 2rem;"></i>
+                                <p>Live Chat</p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="bi bi-envelope text-info mb-2" style="font-size: 2rem;"></i>
+                                <p>Email Support</p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="bi bi-telephone text-success mb-2" style="font-size: 2rem;"></i>
+                                <p>Phone Support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold" style="color: var(--bs-primary);">50K+</h3>
+                    <p class="lead">Happy Customers</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold" style="color: var(--bs-success);">1M+</h3>
+                    <p class="lead">Cards Delivered</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold" style="color: var(--bs-warning);">99.9%</h3>
+                    <p class="lead">Success Rate</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h3 class="display-4 fw-bold" style="color: var(--bs-info);">24/7</h3>
+                    <p class="lead">Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accordion FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne">
+                                    How quickly will I receive my gift card?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Gift cards are delivered instantly to your email address within 1-5 minutes after
+                                    payment confirmation. During peak times, it may take up to 15 minutes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo">
+                                    What payment methods do you accept?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We accept major credit cards (Visa, MasterCard, American Express), PayPal,
+                                    cryptocurrency (Bitcoin, Ethereum), and bank transfers for larger orders.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree">
+                                    Are your gift cards region-locked?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Most of our gift cards are global, but some may have regional restrictions. We
+                                    clearly mark region-specific cards and will ensure you receive the correct version
+                                    for your location.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour">
+                                    What if I don't receive my gift card?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    If you don't receive your gift card within 15 minutes, please check your spam folder
+                                    first. If still not found, contact our 24/7 support team and we'll resolve the issue
+                                    immediately.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- List Groups -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Most Popular Games</h3>
+                    <div class="list-group">
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Steam Gift Cards
+                            <span class="badge bg-primary rounded-pill">#1</span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Valorant Points
+                            <span class="badge bg-danger rounded-pill">Hot</span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Fortnite V-Bucks
+                            <span class="badge bg-success rounded-pill">Sale</span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            PUBG Mobile UC
+                            <span class="badge bg-warning text-dark rounded-pill">New</span>
+                        </a>
+                        <a href="#"
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            FIFA Points
+                            <span class="badge bg-info rounded-pill">Top</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Customer Reviews</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card testimonial-card">
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                    </div>
+                                    <p class="card-text">"Super fast delivery! Got my Steam card in under 2 minutes."
+                                    </p>
+                                    <footer class="blockquote-footer">Alex M.</footer>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card testimonial-card">
+                                <div class="card-body">
+                                    <div class="mb-2">
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                        <i class="bi bi-star-fill text-warning"></i>
+                                    </div>
+                                    <p class="card-text">"Great prices and excellent customer support!"</p>
+                                    <footer class="blockquote-footer">Sarah K.</footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bars Section -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="text-center mb-5">Our Performance Metrics</h3>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h5>Customer Satisfaction</h5>
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div class="progress-bar" role="progressbar"
+                            style="width: 98%; background: linear-gradient(45deg, var(--bs-success), #55a3ff);"
+                            aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">98%</div>
+                    </div>
+                    <h5>Delivery Speed</h5>
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div class="progress-bar" role="progressbar"
+                            style="width: 95%; background: linear-gradient(45deg, var(--bs-primary), var(--bs-secondary));"
+                            aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95%</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h5>Security Rating</h5>
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div class="progress-bar" role="progressbar"
+                            style="width: 100%; background: linear-gradient(45deg, var(--bs-success), #00d2d3);"
+                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</div>
+                    </div>
+                    <h5>Support Response</h5>
+                    <div class="progress mb-3" style="height: 25px;">
+                        <div class="progress-bar" role="progressbar"
+                            style="width: 92%; background: linear-gradient(45deg, var(--bs-warning), #ffa726);"
+                            aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">92%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-center mb-5">Quick Order Form</h2>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="gameSelect" class="form-label">Select Game</label>
+                                <select class="form-select" id="gameSelect" required>
+                                    <option value="">Choose a game...</option>
+                                    <option value="steam">Steam Gift Card</option>
+                                    <option value="valorant">Valorant Points</option>
+                                    <option value="fortnite">Fortnite V-Bucks</option>
+                                    <option value="pubg">PUBG Mobile UC</option>
+                                    <option value="fifa">FIFA Points</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a game.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="amountSelect" class="form-label">Card Amount</label>
+                                <select class="form-select" id="amountSelect" required>
+                                    <option value="">Select amount...</option>
+                                    <option value="10">$10</option>
+                                    <option value="25">$25</option>
+                                    <option value="50">$50</option>
+                                    <option value="100">$100</option>
+                                </select>
+                                <div class="invalid-feedback">Please select an amount.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="your@email.com"
+                                    required>
+                                <div class="invalid-feedback">Please provide a valid email.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="number" class="form-control" id="quantity" value="1" min="1" max="10"
+                                    required>
+                                <div class="invalid-feedback">Please enter a valid quantity (1-10).</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="#" style="color: var(--bs-primary);">Terms of Service</a>
+                                    and <a href="#" style="color: var(--bs-primary);">Privacy Policy</a>
+                                </label>
+                                <div class="invalid-feedback">You must agree to the terms.</div>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-custom btn-lg" type="submit">
+                                <i class="bi bi-credit-card me-2"></i>Proceed to Payment
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Pricing Comparison</h2>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Game Platform</th>
+                            <th>$10</th>
+                            <th>$25</th>
+                            <th>$50</th>
+                            <th>$100</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Steam</strong></td>
+                            <td>$10.99</td>
+                            <td>$25.99</td>
+                            <td>$49.99</td>
+                            <td>$99.99</td>
+                            <td><span class="badge bg-success">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Valorant</strong></td>
+                            <td>$10.99</td>
+                            <td>$25.99</td>
+                            <td>$49.99</td>
+                            <td>$99.99</td>
+                            <td><span class="badge bg-success">In Stock</span></td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td><strong>Fortnite</strong></td>
+                            <td>$9.99</td>
+                            <td>$23.99</td>
+                            <td>$47.99</td>
+                            <td>$95.99</td>
+                            <td><span class="badge bg-warning text-dark">Sale!</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PUBG Mobile</strong></td>
+                            <td>$10.99</td>
+                            <td>$25.99</td>
+                            <td>$49.99</td>
+                            <td>$99.99</td>
+                            <td><span class="badge bg-info">Limited</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>FIFA</strong></td>
+                            <td>$11.99</td>
+                            <td>$27.99</td>
+                            <td>$54.99</td>
+                            <td>$109.99</td>
+                            <td><span class="badge bg-danger">Low Stock</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagination Section -->
+    <section class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="Product pagination">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collapsible/Expandable Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="text-center mb-4">
+                        <h3>Important Information</h3>
+                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#importantInfo" aria-expanded="false">
+                            <i class="bi bi-info-circle me-2"></i>Read Terms & Conditions
+                        </button>
+                    </div>
+                    <div class="collapse" id="importantInfo">
+                        <div class="card card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-shield-check text-success me-2"></i>Security & Privacy</h5>
+                                    <ul class="list-unstyled">
+                                        <li>• SSL encrypted transactions</li>
+                                        <li>• No personal data stored</li>
+                                        <li>• PCI DSS compliant</li>
+                                        <li>• Secure payment processing</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h5><i class="bi bi-clock text-warning me-2"></i>Delivery Information</h5>
+                                    <ul class="list-unstyled">
+                                        <li>• Instant email delivery</li>
+                                        <li>• 24/7 automated system</li>
+                                        <li>• Backup delivery methods</li>
+                                        <li>• Manual review if needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="alert alert-warning">
+                                        <i class="bi bi-exclamation-triangle me-2"></i>
+                                        <strong>Important:</strong> Gift cards are final sale and cannot be returned.
+                                        Please double-check your email address before completing your purchase.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <h5><i class="bi bi-controller me-2"></i>GameCard Pro</h5>
+                    <p>Your trusted source for premium gaming gift cards with instant delivery worldwide.</p>
+                    <div>
+                        <a href="" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="" class="text-light"><i class="bi bi-discord"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Steam Cards</a></li>
+                        <li><a href="#" class="text-light">Valorant Points</a></li>
+                        <li><a href="#" class="text-light">Fortnite V-Bucks</a></li>
+                        <li><a href="#" class="text-light">PUBG Mobile UC</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Contact Us</a></li>
+                        <li><a href="#" class="text-light">FAQ</a></li>
+                        <li><a href="#" class="text-light">Terms of Service</a></li>
+                        <li><a href="#" class="text-light">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h6>Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="text-light"><i class="bi bi-envelope me-2"></i>support@gamecardpro.com</li>
+                        <li class="text-light"><i class="bi bi-telephone me-2"></i>+1 (555) 123-4567</li>
+                        <li class="text-light"><i class="bi bi-clock me-2"></i>24/7 Support</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 GameCard Pro. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' fill='white'%3E%3Ctext x='20' y='15' text-anchor='middle' font-size='12'%3EVISA%3C/text%3E%3C/svg%3E"
+                        alt="Visa" class="me-2">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' fill='white'%3E%3Ctext x='20' y='15' text-anchor='middle' font-size='10'%3EMC%3C/text%3E%3C/svg%3E"
+                        alt="MasterCard" class="me-2">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='25' fill='white'%3E%3Ctext x='20' y='15' text-anchor='middle' font-size='8'%3EPayPal%3C/text%3E%3C/svg%3E"
+                        alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window -->
+    <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header"
+                    style="background: linear-gradient(135deg, var(--bs-primary), var(--bs-secondary)); color: white;">
+                    <h5 class="modal-title" id="promoModalLabel">
+                        <i class="bi bi-gift me-2"></i>Special Offers
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-success">
+                                <div class="card-header bg-success text-white">
+                                    <h6 class="mb-0">Steam Sale</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="text-success">10% Extra Credit</h4>
+                                    <p>Get 10% extra credit on all Steam gift cards this week!</p>
+                                    <small class="text-muted">Valid until Dec 31, 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-warning">
+                                <div class="card-header bg-warning text-dark">
+                                    <h6 class="mb-0">First Time Buyer</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="text-warning">$5 Off</h4>
+                                    <p>Get $5 off your first order over $50!</p>
+                                    <small class="text-muted">Use code: WELCOME5</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        <strong>Bundle Deal:</strong> Buy 3 different game cards and get 5% off total!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="welcomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-gift-fill text-primary me-2"></i>
+                <strong class="me-auto">Welcome Offer!</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                Get 10% off your first order with code WELCOME10!
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas Cart -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel">
+                <i class="bi bi-cart3 me-2"></i>Shopping Cart
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex flex-column h-100">
+                <div class="flex-grow-1">
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="my-0">Steam $25</h6>
+                                <small class="text-muted">Gift Card</small>
+                            </div>
+                            <span class="text-muted">$25.99</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="my-0">Valorant $10</h6>
+                                <small class="text-muted">VP Points</small>
+                            </div>
+                            <span class="text-muted">$10.99</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between">
+                            <span>Total (USD)</span>
+                            <strong>$36.98</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto">
+                    <button class="btn btn-primary w-100 mb-2">
+                        <i class="bi bi-credit-card me-2"></i>Checkout
+                    </button>
+                    <button class="btn btn-outline-secondary w-100">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 CDN link -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+<script src="./js/script.js"></script>
+
+</body>
+
+</html>
