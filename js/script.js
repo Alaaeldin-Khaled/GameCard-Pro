@@ -22,7 +22,7 @@ window.addEventListener('load', function () {
         if (toast) {
             new bootstrap.Toast(toast).show();
         }
-    }, 3000);
+    }, 2000);
 });
 
 // Cart button click handler
@@ -33,7 +33,7 @@ document.querySelector('[data-bs-target="#cartOffcanvas"]')?.addEventListener('c
     }
 });
 
-// Add to cart functionality (FIXED)
+// Add to cart functionality
 document.querySelectorAll('.btn').forEach(function (button) {
     if (button.textContent.includes("Add to Cart")) {
         button.addEventListener('click', function () {
@@ -92,16 +92,5 @@ window.addEventListener('load', function () {
                 <p>Instant delivery, ready to use!</p>
             `;
         }
-    }, 3000); // simulate loading
+    }, 3000);
 });
-
-// window.addEventListener('load', function () {
-//         setTimeout(function () {
-//             const processing = document.querySelector('#instant .spinner-border');
-//             if (processing) {
-//                 processing.outerHTML = `<i class="bi bi-check-circle-fill text-success mb-3" style="font-size: 2rem;"></i>`;
-//                 const label = processing.parentElement.querySelector('h6');
-//                 if (label) label.textContent = "Processed";
-//             }
-//         }, 2000); // simulate loading
-//     });
